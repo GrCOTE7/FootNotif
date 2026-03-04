@@ -2,3 +2,4 @@
 data/app.db
 all_teams.json
 /.vscode/
+__pycache__/
