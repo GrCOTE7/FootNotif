@@ -1,0 +1,28 @@
+============================== 
+05/03/2026  0:22:30,70 Starting job 
+============================== 
+05/03/2026  0:22:40,63 Starting job 
+============================== 
+05/03/2026  0:23:00,03 Starting job 
+==============================
+05/03/2026  0:23:44,32 Starting job
+API not running, starting...
+==============================
+05/03/2026  0:24:47,37 Starting job
+API not running, starting...
+API started successfully
+Sending notifications
+{"detail":"Method Not Allowed"}
+Job finished
+==============================
+05/03/2026  0:28:02,38 Starting job
+API not running, starting...
+API started successfully
+Sending notifications
+{"detail":"Method Not Allowed"}
+Job finished
+==============================
+05/03/2026  0:29:01,07 Starting job
+Sending notifications
+{"sentTo":["ethanou21@gmail.com"],"count":1}
+Job finished
