@@ -1,5 +1,5 @@
 .env
-data/app.db
+*.db
 all_teams.json
 /.vscode/
 __pycache__/
