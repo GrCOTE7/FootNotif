@@ -290,4 +290,3 @@ Contributions are welcome.
 ## License
 
 No license file is currently included.  
-If you plan to make this project public/open-source, consider adding a `LICENSE` (MIT, Apache-2.0, etc.).
