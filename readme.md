@@ -283,7 +283,6 @@ Contributions are welcome.
 - Add Docker support
 - Improve email template formatting
 - Add tests (pytest)
-- Fix `runJob.sh` to force POST on `/notifications/send`
 - Add pagination + better team search
 
 ---
