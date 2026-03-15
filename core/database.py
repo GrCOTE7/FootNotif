@@ -181,21 +181,24 @@ class Database():
         except Exception as e:
             return None, e
 
-    def getSubscriberTeamNames(self, subscriberId):
+    def getSubscriberTeams(self, subscriberId):
         try:
             with self.lock:
                 rows = self.conn.execute(
                     """
-                    SELECT t.name
+                    SELECT t.name, t.crest
                     FROM teams t
                     JOIN subscriptions s ON s.team_id = t.id
                     WHERE s.subscriber_id = ?
+                    ORDER BY t.name
                     """,
                     (subscriberId,)
                 ).fetchall()
-                return [row["name"] for row in rows], None
+                return [{"name": row["name"], "crest": row["crest"]} for row in rows], None
         except Exception as e:
             return None, e
+
+
 
     def getSubscriberIdByEmail(self, email):
         try:
@@ -250,16 +253,17 @@ class Database():
                 search = f"%{query}%"
                 rows = self.conn.execute(
                     """
-                    SELECT name
+                    SELECT name, crest
                     FROM teams
                     WHERE name LIKE ? COLLATE NOCASE
-                       OR short_name LIKE ? COLLATE NOCASE
+                    OR short_name LIKE ? COLLATE NOCASE
                     ORDER BY name
                     LIMIT 20
                     """,
                     (search, search)
                 ).fetchall()
-                return [row["name"] for row in rows], None
+                return [{"name": row["name"], "crest": row["crest"]} for row in rows], None
         except Exception as e:
             return None, e
+
             

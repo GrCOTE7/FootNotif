@@ -11,124 +11,143 @@ class Mailer():
 
     def sendMail(self, matches, receiverEmail):
         matchBlock = """
-<tr>
-  <td style="padding:20px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="match-card" style="background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-      <tr>
-        <td style="padding:30px 20px 20px;">
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-            <tr>
-              <td width="45%" align="center" valign="middle" style="text-align:center;">
-                <img src="{{team1_logo}}" alt="{{team1_name}}" width="80" height="80" class="team-logo" style="display:block; max-width:80px; height:auto; border:0; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#6b7280;">
-              </td>
-              <td width="10%" align="center" valign="middle" style="text-align:center;">
-                <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
-                  <tr>
-                    <td class="vs-badge" style="background-color:#f3f4f6; border-radius:50%; padding:8px 12px; font-family:Arial, Helvetica, sans-serif; font-size:13px; font-weight:bold; color:#6b7280; text-align:center; border:2px solid #e5e7eb;">VS</td>
-                  </tr>
-                </table>
-              </td>
-              <td width="45%" align="center" valign="middle" style="text-align:center;">
-                <img src="{{team2_logo}}" alt="{{team2_name}}" width="80" height="80" class="team-logo" style="display:block; max-width:80px; height:auto; border:0; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#6b7280;">
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+          <tr>
+            <td style="padding:20px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="match-card" style="width:100%; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px;">
+                <tr>
+                  <td style="padding:30px 20px 20px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tr>
+                        <td width="45%" align="center" valign="top" style="text-align:center; vertical-align:top;">
+                          <img src="{{team1_logo}}" alt="{{team1_name}}" width="80" height="80" class="team-logo" style="display:block; width:80px; max-width:80px; height:auto; margin:0 auto; border:0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:12px auto 0 auto;">
+                            <tr>
+                              <td width="110" class="team-name" style="width:110px; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; line-height:1.4; color:#111827; text-align:center;">
+                                {{team1_name}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
 
-      <tr>
-        <td style="padding:0 20px 20px;">
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-            <tr>
-              <td width="45%" align="left" class="team-name" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; color:#111827; text-align:left; line-height:1.4;">
-                {{team1_name}}
-              </td>
-              <td width="10%"></td>
-              <td width="45%" align="right" class="team-name" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; color:#111827; text-align:right; line-height:1.4;">
-                {{team2_name}}
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+                        <td width="10%" align="center" valign="middle" style="text-align:center; vertical-align:middle;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <tr>
+                              <td class="vs-badge" style="background-color:#f3f4f6; border:2px solid #e5e7eb; border-radius:999px; padding:8px 12px; font-family:Arial, Helvetica, sans-serif; font-size:13px; font-weight:bold; line-height:1; color:#6b7280; text-align:center;">
+                                VS
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
 
-      <tr>
-        <td style="padding:0 20px;">
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-            <tr>
-              <td style="border-top:1px solid #e5e7eb; font-size:0; line-height:0;">&nbsp;</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+                        <td width="45%" align="center" valign="top" style="text-align:center; vertical-align:top;">
+                          <img src="{{team2_logo}}" alt="{{team2_name}}" width="80" height="80" class="team-logo" style="display:block; width:80px; max-width:80px; height:auto; margin:0 auto; border:0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:12px auto 0 auto;">
+                            <tr>
+                              <td width="110" class="team-name" style="width:110px; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; line-height:1.4; color:#111827; text-align:center;">
+                                {{team2_name}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
 
-      <tr>
-        <td align="center" style="padding:20px;">
-          <p style="margin:0 0 8px; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:600; color:#059669; text-align:center;">
-            {{match_date}}
-          </p>
-          <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#6b7280; text-align:center; text-transform:uppercase; letter-spacing:0.5px;">
-            {{competition}}
-          </p>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td height="10" style="height:10px; font-size:0; line-height:0;">&nbsp;</td>
-</tr>
-"""
+                <tr>
+                  <td align="center" style="padding:20px; text-align:center;">
+                    <p style="margin:0 0 8px 0; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:600; line-height:1.4; color:#059669; text-align:center;">
+                      {{match_date}}
+                    </p>
+                    <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:1.4; color:#6b7280; text-align:center; text-transform:uppercase; letter-spacing:0.5px;">
+                      {{competition}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td height="10" style="height:10px; line-height:10px; font-size:0;">&nbsp;</td>
+          </tr>
+        """
 
         emailTemplate = """<!DOCTYPE html>
-<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="x-apple-disable-message-reformatting">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Football Match Notifications</title>
-<style>
-  @media only screen and (max-width: 600px) {
-    .email-container { width: 100% !important; max-width: 100% !important; }
-    .match-card { width: 100% !important; }
-    .team-logo { width: 50px !important; height: auto !important; }
-    .team-name { font-size: 14px !important; }
-    .vs-badge { font-size: 12px !important; padding: 4px 8px !important; }
-  }
-</style>
-</head>
-<body style="margin:0; padding:0; background-color:#f3f4f6; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
-<center>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f3f4f6; margin:0; padding:0;">
-    <tr>
-      <td align="center" style="padding:20px 10px;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#ffffff; border-radius:12px; border:1px solid #e5e7eb;">
+    <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Football Match Notifications</title>
+    <style>
+      body, table, td, p, a, span, h1 {
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+
+      .email-container {
+        width: 100%;
+        max-width: 600px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .email-container {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .team-logo {
+          width: 56px !important;
+          max-width: 56px !important;
+          height: auto !important;
+        }
+
+        .team-name {
+          width: 84px !important;
+          font-size: 14px !important;
+        }
+
+        .vs-badge {
+          font-size: 12px !important;
+          padding: 6px 10px !important;
+        }
+      }
+    </style>
+    </head>
+    <body style="margin:0; padding:0; background-color:#f3f4f6; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+      <center style="width:100%; background-color:#f3f4f6;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%; background-color:#f3f4f6; margin:0; padding:0;">
           <tr>
-            <td align="center" style="padding:40px 20px 30px; background-color:#059669; border-radius:12px 12px 0 0;">
-              <h1 style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:28px; color:#ffffff; font-weight:bold; text-transform:uppercase; letter-spacing:1px;">Match Notifications</h1>
-              <p style="margin:10px 0 0; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#d1fae5;">Stay updated with upcoming fixtures</p>
+            <td align="center" style="padding:20px 10px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="width:100%; max-width:600px; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:12px;">
+                <tr>
+                  <td align="center" style="padding:40px 20px 30px; background-color:#059669; border-radius:12px 12px 0 0;">
+                    <h1 style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:28px; font-weight:bold; line-height:1.2; color:#ffffff; text-transform:uppercase; letter-spacing:1px;">
+                      Match Notifications
+                    </h1>
+                    <p style="margin:10px 0 0 0; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.4; color:#d1fae5;">
+                      Stay updated with upcoming fixtures
+                    </p>
+                  </td>
+                </tr>
+
+                {{matches}}
+
+                <tr>
+                  <td align="center" style="padding:30px 20px; background-color:#f9fafb; border-top:1px solid #e5e7eb; border-radius:0 0 12px 12px;">
+                    <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:1.4; color:#6b7280; text-align:center;">
+                      You received this notification because you subscribed to match updates.
+                    </p>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
-
-          {{matches}}
-
-          <tr>
-            <td align="center" style="padding:30px 20px; background-color:#f9fafb; border-radius:0 0 12px 12px; border-top:1px solid #e5e7eb;">
-              <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#6b7280; text-align:center;">
-                You received this notification because you subscribed to match updates.
-              </p>
-            </td>
-          </tr>
-
         </table>
-      </td>
-    </tr>
-  </table>
-</center>
-</body>
-</html>
-"""
+      </center>
+    </body>
+    </html>
+    """
 
         try:
             matchesHtml = ""

@@ -108,16 +108,19 @@ class Service():
 
         return {"sentTo": sentTo, "count": len(sentTo)}
 
-    def getSubscriberTeamNames(self, subscriberEmail):
+    def getSubscriberTeams(self, subscriberEmail):
         subscriberId, err = self.db.getSubscriberIdByEmail(subscriberEmail)
         if err is not None or subscriberId is None:
             print("Error getting subscriber id from email")
             return None
 
-        teamNames, err = self.db.getSubscriberTeamNames(subscriberId)
+        teams, err = self.db.getSubscriberTeams(subscriberId)
         if err is not None:
             print(f"Error getting subscriber teams: {err}")
             return None
+
+        return teams
+
 
         return teamNames
 

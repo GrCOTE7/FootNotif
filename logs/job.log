@@ -78,3 +78,144 @@ INFO:     127.0.0.1:50968 - "GET /notifications/send HTTP/1.1" 405 Method Not Al
 2026-03-12 21:59:55 Sending notifications
 {"sentTo":[],"count":0}
 2026-03-12 21:59:55 Job finished
+==============================
+2026-03-13 00:00:01 Starting job
+2026-03-13 00:00:01 API not running, starting...
+INFO:     Started server process [5701]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+Teams already in database
+INFO:     127.0.0.1:48968 - "GET /health HTTP/1.1" 200 OK
+2026-03-13 00:00:02 API started successfully
+2026-03-13 00:00:02 Sending notifications
+INFO:     127.0.0.1:48970 - "POST /notifications/send HTTP/1.1" 200 OK
+{"sentTo":[],"count":0}
+2026-03-13 00:00:02 Job finished
+INFO:     172.70.50.157:0 - "POST /graphql HTTP/1.0" 404 Not Found
+INFO:     172.69.130.157:0 - "POST /gql HTTP/1.0" 404 Not Found
+INFO:     108.162.241.112:0 - "GET /swagger.json HTTP/1.0" 404 Not Found
+INFO:     104.23.229.56:0 - "GET /v1/.env HTTP/1.0" 404 Not Found
+INFO:     172.68.151.164:0 - "GET /v2/.env HTTP/1.0" 404 Not Found
+INFO:     104.23.225.162:0 - "GET /shared/.env HTTP/1.0" 404 Not Found
+INFO:     172.71.232.50:0 - "GET /.env HTTP/1.0" 404 Not Found
+INFO:     172.71.130.192:0 - "GET /shared/config/.env HTTP/1.0" 404 Not Found
+INFO:     172.69.223.128:0 - "GET /shared/config.env HTTP/1.0" 404 Not Found
+INFO:     172.71.122.41:0 - "GET /shared/config/config.env HTTP/1.0" 404 Not Found
+INFO:     172.69.223.128:0 - "GET /config.env HTTP/1.0" 404 Not Found
+INFO:     172.69.223.128:0 - "GET /stripe.ts HTTP/1.0" 404 Not Found
+INFO:     172.71.130.192:0 - "GET /config HTTP/1.0" 404 Not Found
+INFO:     172.68.151.164:0 - "GET /payment/config HTTP/1.0" 404 Not Found
+INFO:     104.23.225.162:0 - "GET /settings HTTP/1.0" 404 Not Found
+INFO:     172.68.151.164:0 - "GET /v1/settings HTTP/1.0" 404 Not Found
+INFO:     172.71.130.192:0 - "GET /stripe/config HTTP/1.0" 404 Not Found
+INFO:     104.23.229.56:0 - "GET /v1/config HTTP/1.0" 404 Not Found
+INFO:     141.101.68.217:0 - "GET /config.map HTTP/1.0" 404 Not Found
+INFO:     172.71.232.50:0 - "GET /settings.map HTTP/1.0" 404 Not Found
+INFO:     172.71.130.192:0 - "GET /v1/config.map HTTP/1.0" 404 Not Found
+INFO:     45.148.10.187:0 - "GET /user HTTP/1.0" 404 Not Found
+INFO:     45.148.10.187:0 - "GET /.env HTTP/1.0" 404 Not Found
+INFO:     45.148.10.187:0 - "GET /v1/executions HTTP/1.0" 404 Not Found
+INFO:     45.148.10.187:0 - "GET /v1/credentials HTTP/1.0" 404 Not Found
+INFO:     45.148.10.187:0 - "GET /v1/workflows HTTP/1.0" 404 Not Found
+INFO:     45.148.10.187:0 - "GET /login HTTP/1.0" 404 Not Found
+INFO:     45.148.10.187:0 - "GET /credentials HTTP/1.0" 404 Not Found
+==============================
+2026-03-14 00:00:01 Starting job
+INFO:     127.0.0.1:42232 - "GET /health HTTP/1.1" 200 OK
+2026-03-14 00:00:01 Sending notifications
+INFO:     127.0.0.1:42238 - "POST /notifications/send HTTP/1.1" 200 OK
+{"sentTo":[],"count":0}
+2026-03-14 00:00:01 Job finished
+INFO:     172.104.241.92:0 - "GET /v2/about HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v1/check-version HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /server/version HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /version HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /vip/i18n/api/v2/translation/products/vRNIUI/versions/1 HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v1.0/environment HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v3/meta HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v1/version HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v2/hoverfly/version HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v1/info HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /status HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v2.0/systeminfo HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /v1/cluster/summary HTTP/1.0" 404 Not Found
+INFO:     172.104.241.92:0 - "GET /system/status HTTP/1.0" 404 Not Found
+==============================
+2026-03-14 23:29:37 Starting job
+INFO:     127.0.0.1:46138 - "GET /health HTTP/1.1" 200 OK
+2026-03-14 23:29:37 Sending notifications
+INFO:     127.0.0.1:46142 - "POST /notifications/send HTTP/1.1" 200 OK
+{"sentTo":[],"count":0}
+2026-03-14 23:29:37 Job finished
+INFO:     192.168.1.193:58636 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:58647 - "OPTIONS /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:58647 - "POST /subscribers HTTP/1.1" 201 Created
+INFO:     192.168.1.193:58647 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37932 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37938 - "POST /notifications/send HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5701]
+==============================
+2026-03-14 23:45:46 Starting job
+2026-03-14 23:45:47 API not running, starting...
+INFO:     Started server process [20938]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+Teams already in database
+INFO:     127.0.0.1:46820 - "GET /health HTTP/1.1" 200 OK
+2026-03-14 23:45:49 API started successfully
+2026-03-14 23:45:49 Sending notifications
+INFO:     127.0.0.1:46836 - "POST /notifications/send HTTP/1.1" 200 OK
+{"sentTo":[],"count":0}
+2026-03-14 23:45:49 Job finished
+INFO:     192.168.1.193:64241 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:64248 - "OPTIONS /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:64248 - "POST /subscribers HTTP/1.1" 201 Created
+INFO:     192.168.1.193:64248 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:64263 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50692 - "GET /subscribers/ethancoutard%40gmail.com/teams HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "GET /teams/search?q=Paris HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "OPTIONS /subscriptions HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "POST /subscriptions HTTP/1.1" 201 Created
+INFO:     192.168.1.193:50694 - "GET /subscribers/ethancoutard%40gmail.com/teams HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "GET /teams/search?q=Paris+Saint-Germain+FC HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50603 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "GET /subscribers/riyanchakibi%40gmail.com/teams HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50603 - "GET /teams/search?q=Paris HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "POST /subscriptions HTTP/1.1" 201 Created
+INFO:     192.168.1.193:50603 - "GET /subscribers/riyanchakibi%40gmail.com/teams HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50694 - "GET /teams/search?q=Paris+Saint-Germain+FC HTTP/1.1" 200 OK
+==============================
+2026-03-14 23:48:16 Starting job
+INFO:     127.0.0.1:44590 - "GET /health HTTP/1.1" 200 OK
+2026-03-14 23:48:16 Sending notifications
+INFO:     127.0.0.1:44602 - "POST /notifications/send HTTP/1.1" 200 OK
+{"sentTo":[],"count":0}
+2026-03-14 23:48:16 Job finished
+INFO:     192.168.1.193:50613 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50613 - "GET /subscribers/ethancoutard%40gmail.com/teams HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50615 - "GET /teams/search?q=Paris+Saint-Germain+FC HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50616 - "GET /subscribers HTTP/1.1" 200 OK
+INFO:     192.168.1.193:50613 - "GET /subscribers HTTP/1.1" 200 OK
+==============================
+2026-03-14 23:49:53 Starting job
+INFO:     127.0.0.1:32934 - "GET /health HTTP/1.1" 200 OK
+2026-03-14 23:49:53 Sending notifications
+INFO:     127.0.0.1:32948 - "POST /notifications/send HTTP/1.1" 200 OK
+{"sentTo":[],"count":0}
+2026-03-14 23:49:53 Job finished
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [20938]
+==============================
+2026-03-15 00:00:01 Starting job
+2026-03-15 00:00:01 Sending notifications
+{"sentTo":["ethancoutard@gmail.com","riyanchakibi@gmail.com"],"count":2}
+2026-03-15 00:00:06 Job finished

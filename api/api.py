@@ -21,9 +21,12 @@ class SubscribersResponse(BaseModel):
     subscribers: Optional[list] = None
 
 
-class TeamsResponse(BaseModel):
-    teams: List[str]
+class TeamResponse(BaseModel):
+    name: str
+    crest: str | None = None
 
+class TeamsResponse(BaseModel):
+    teams: list[TeamResponse]
 
 class MessageResponse(BaseModel):
     message: str
@@ -76,10 +79,11 @@ def createApp(service):
 
     @app.get("/subscribers/{email}/teams", response_model=TeamsResponse)
     def getSubscriberTeams(email: EmailStr):
-        teams = service.getSubscriberTeamNames(email)
+        teams = service.getSubscriberTeams(email)
         if teams is None:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Subscriber not found")
         return {"teams": teams}
+
 
     @app.post("/subscriptions", response_model=MessageResponse, status_code=status.HTTP_201_CREATED)
     def createSubscriptions(payload: SubscriptionCreate):
