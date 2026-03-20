@@ -59,10 +59,10 @@ cd FootNotif
 
 ## 2. Run the install script
 
+**Prerequisites:** Python & Node.js installed
+
 The project includes installation scripts that automatically:
 
-- install **Python** if missing
-- install **Node.js** if missing
 - create the Python **virtual environment**
 - install **Python dependencies**
 - install **Node dependencies**
@@ -70,9 +70,15 @@ The project includes installation scripts that automatically:
 
 ### Windows
 
-```bat
-install.bat
-```
+| Command                         | Effect                                 |
+|---------------------------------|----------------------------------------|
+| `install.ps1`                   | installs + starts API + starts Front   |
+| `install.ps1 -NoFront`          | installs + starts API only             |
+| `install.ps1 -NoStart`          | installs only                          |
+| `install.ps1 -NoStart -NoFront` | installs only (NoStart takes priority) |
+| `start.ps1`                     | starts API + starts Front              |
+| `start.ps1 -NoFront`            | starts API only                        |
+
 
 ### Linux
 
