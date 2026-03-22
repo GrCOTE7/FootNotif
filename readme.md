@@ -8,7 +8,7 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 
 ---
 
-# Features
+## Features
 
 - ✅ Create subscribers (email + notification frequency)
 - ✅ Subscribe an email to multiple teams
@@ -25,9 +25,9 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 
 ---
 
-# Tech stack
+## Tech stack
 
-## Backend
+### Backend
 
 - **Python**
 - **FastAPI**
@@ -37,7 +37,7 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 - **SMTP email sending**
 - **python-dotenv**
 
-## Frontend
+### Frontend
 
 - **React**
 - **Vite**
@@ -46,9 +46,9 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 
 ---
 
-# Installation
+## Installation
 
-## 1. Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/EthanCoutard/FootNotif.git
@@ -57,7 +57,7 @@ cd FootNotif
 
 ---
 
-## 2. Run the install script
+### 2. Run the install script
 
 **Prerequisites:** Python & Node.js installed
 
@@ -68,7 +68,7 @@ The project includes installation scripts that automatically:
 - install **Node dependencies**
 - configure the **scheduled notification job**
 
-### Windows
+#### Windows
 
 | Command                         | Effect                                 |
 |---------------------------------|----------------------------------------|
@@ -79,8 +79,7 @@ The project includes installation scripts that automatically:
 | `start.ps1`                     | starts API + starts Front              |
 | `start.ps1 -NoFront`            | starts API only                        |
 
-
-### Linux
+#### Linux
 
 ```bash
 bash install.sh
@@ -90,13 +89,11 @@ bash install.sh
 
 ---
 
-# Environment variables (.env)
+### 3. Environment variables (.env)
 
 Two `.env` files are required.
 
----
-
-# Root `.env` (API configuration)
+##### Root `.env` (API configuration)
 
 Copy the example file:
 
@@ -115,9 +112,22 @@ SMTP_PORT=587
 API_PORT=8000
 ```
 
+##### Frontend `.env` (Admin interface configuration)
+
+Copy the example file:
+
+```bash
+cp football-admin/.env.example football-admin/.env
+```
+
+Example configuration:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000
+```
 ---
 
-# Gmail configuration (App Password)
+### Gmail configuration (App Password)
 
 If you use Gmail, you **cannot use your normal password**.  
 You must create an **App Password**.
@@ -153,7 +163,7 @@ in your `.env`.
 
 ---
 
-# football-data API token
+### football-data API token
 
 You also need an API token from:
 
@@ -166,7 +176,7 @@ Steps:
 1. Create a free account
 2. Go to your dashboard
 3. Copy your API key
-4. Paste it into your `.env`
+4. Paste it into your root `.env`
 
 ```
 API_TOKEN=your_token_here
@@ -174,27 +184,9 @@ API_TOKEN=your_token_here
 
 ---
 
-# Frontend `.env`
+## Running the API
 
-The admin interface also uses environment variables.
-
-Copy the example file:
-
-```bash
-cp football-admin/.env.example football-admin/.env
-```
-
-Example:
-
-```env
-VITE_API_URL=http://127.0.0.1:8080
-```
-
----
-
-# Running the API
-
-Start the backend API:
+### Start the backend API server
 
 ```bash
 .venv/bin/python3 app.py
@@ -202,19 +194,27 @@ Start the backend API:
 
 The API will start on:
 
-```
+```bash
 http://127.0.0.1:YOUR_PORT
 ```
 
+*By default: YOUR_PORT = 8000*
+
 Health endpoint:
 
+```php
+http://127.0.0.1:YOUR_PORT/health
 ```
-GET /health
+
+Doc API endpoint:
+
+```php
+http://127.0.0.1:YOUR_PORT/docs
 ```
 
 ---
 
-# Admin Interface
+#### Admin Interface
 
 FootNotif includes a **React + Vite + TypeScript admin interface**.
 
@@ -225,7 +225,7 @@ It allows you to:
 - search teams
 - trigger notifications manually
 
-## Run the admin interface
+## Run the front admin interface
 
 ```bash
 cd football-admin
@@ -234,13 +234,15 @@ npm run dev
 
 The admin interface runs on:
 
-```
+```php
 http://localhost:5173
 ```
 
 ---
 
-# Scheduled notifications
+## Details
+
+### Scheduled notifications
 
 FootNotif includes scripts that automatically run a job responsible for sending notifications.
 
@@ -248,57 +250,29 @@ The job performs the following actions:
 
 1. Creates the `logs/` directory if needed  
 2. Checks if the API is running (`GET /health`)  
-3. Starts the API if necessary  
+3. Starts the API server if necessary  
 4. Triggers the notification endpoint  
 5. Writes logs to `logs/job.log`
 
 ---
 
-# Scheduled tasks
+### Scheduled tasks
 
-The scheduled notification job is **installed automatically by the install script**.
-
-## Windows
-
-Uses **Windows Task Scheduler**.
-
-Task installed automatically by:
-
-```
-install.bat
-```
-
-The task runs daily at **00:00** and executes:
-
-```
-runJob.bat
-```
-
----
-
-## Linux
-
-Uses **cron**.
-
-Cron entry installed automatically by:
-
-```
-install.sh
-```
+The scheduled notification job directory is **automatically installed by the install script**.
 
 The cron job runs daily at **00:00** and executes:
 
-```
+```bash
 runJob.sh
 ```
 
 ---
 
-# Notification logic
+### Notification logic
 
 Implemented in:
 
-```
+```bash
 core/service.py
 ```
 
@@ -315,75 +289,59 @@ The endpoint returns:
 
 ---
 
-# API endpoints overview
+### API endpoints overview
 
 Base URL:
 
-```
+```php
 http://127.0.0.1:8000
 ```
 
----
-
-## Health
-
-```
-GET /health
-```
-
-Returns:
-
-```json
-{"message":"ok"}
-```
-
----
-
-## Subscribers
+#### Subscribers
 
 List subscribers
 
-```
+```bash
 GET /subscribers
 ```
 
 Create subscriber
 
-```
+```bash
 POST /subscribers
 ```
 
 Delete subscriber
 
-```
+```bash
 DELETE /subscribers/{email}
 ```
 
 List subscriber teams
 
-```
+```bash
 GET /subscribers/{email}/teams
 ```
 
 ---
 
-## Subscriptions
+#### Subscriptions
 
 Create subscription
 
-```
+```bash
 POST /subscriptions
 ```
 
 Remove subscription
 
-```
+```bash
 DELETE /subscriptions/{email}/{teamName}
 ```
 
 ---
 
-## Teams
+#### Teams
 
 Search teams
 
@@ -393,17 +351,17 @@ GET /teams/search?q=...
 
 ---
 
-## Notifications
+#### Notifications
 
 Trigger notifications manually
 
-```
+```bash
 POST /notifications/send
 ```
 
 ---
 
-# Example API requests
+#### API requests examples
 
 Create subscriber
 
@@ -435,9 +393,9 @@ curl -X POST "http://127.0.0.1:8000/notifications/send"
 
 ---
 
-# Project structure
+## Project structure
 
-```
+```v
 FootNotif/
 ├── api/
 │   └── api.py
@@ -476,7 +434,7 @@ FootNotif/
 
 ---
 
-# Contributing
+## Contributing
 
 Contributions are welcome.
 
@@ -484,9 +442,9 @@ Contributions are welcome.
 
 2. Create a branch
 
-```bash
-git checkout -b feat/my-feature
-```
+    ```bash
+    git checkout -b feat/my-feature
+    ```
 
 3. Commit your changes
 
@@ -504,6 +462,6 @@ git push origin feat/my-feature
 
 ---
 
-# License
+## License
 
-No license file is currently included.
+License file isn't included yet.

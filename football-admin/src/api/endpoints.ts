@@ -13,8 +13,17 @@ const SubscriptionCreateSchema = z.object({
   teams: z.array(z.string().min(1)).min(1)
 })
 
+function ensureObjectResponse(data: unknown): void {
+  if (typeof data === "string") {
+    throw new Error(
+      "La reponse API est invalide (texte recu au lieu de JSON). Verifie VITE_API_URL dans football-admin/.env."
+    )
+  }
+}
+
 export async function getSubscribers(): Promise<Subscriber[]> {
   const res = await api.get("/subscribers")
+  ensureObjectResponse(res.data)
   const parsed = SubscribersResponseSchema.parse(res.data)
   return parsed.subscribers ?? []
 }
@@ -29,6 +38,7 @@ export async function deleteSubscriber(email: string): Promise<void> {
 
 export async function getSubscriberTeams(email: string): Promise<{ teamNames: string[] }> {
   const res = await api.get(`/subscribers/${encodeURIComponent(email)}/teams`)
+  ensureObjectResponse(res.data)
   const parsed = TeamsResponseSchema.parse(res.data)
   const names = parsed.teams.map((t) => (typeof t === "string" ? t : t.name))
   return { teamNames: names }
@@ -36,6 +46,7 @@ export async function getSubscriberTeams(email: string): Promise<{ teamNames: st
 
 export async function searchTeams(q: string): Promise<Team[]> {
   const res = await api.get("/teams/search", { params: { q } })
+  ensureObjectResponse(res.data)
   const parsed = TeamsResponseSchema.parse(res.data)
   return parsed.teams
     .map((t) => (typeof t === "string" ? ({ name: t } as Team) : (t as Team)))
