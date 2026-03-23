@@ -1,3 +1,9 @@
+---
+markmap:
+  duration: 2100
+  initialExpandLevel: -1
+---
+
 # FootNotif ⚽📩
 
 FootNotif is a small **FastAPI** project that lets people **subscribe to football teams** and receive **email notifications** about upcoming matches (daily or weekly).
@@ -8,7 +14,7 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 
 ---
 
-## Features
+## Features <!-- markmap: fold -->
 
 - ✅ Create subscribers (email + notification frequency)
 - ✅ Subscribe an email to multiple teams
@@ -25,7 +31,7 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 
 ---
 
-## Tech stack
+## Tech stack <!-- markmap: fold -->
 
 ### Backend
 
@@ -46,7 +52,7 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 
 ---
 
-## Installation
+## Installation <!-- markmap: fold -->
 
 ### 1. Clone the repository
 
@@ -184,7 +190,7 @@ API_TOKEN=your_token_here
 
 ---
 
-## Running the API
+## Running the API <!-- markmap: fold -->
 
 ### Start the backend API server
 
@@ -225,7 +231,7 @@ It allows you to:
 - search teams
 - trigger notifications manually
 
-## Run the front admin interface
+## Run the front admin interface <!-- markmap: fold -->
 
 ```bash
 cd football-admin
@@ -240,7 +246,7 @@ http://localhost:5173
 
 ---
 
-## Details
+## Details \<!-- markmap: fold -->
 
 ### Scheduled notifications
 
@@ -345,7 +351,7 @@ DELETE /subscriptions/{email}/{teamName}
 
 Search teams
 
-```
+```bash
 GET /teams/search?q=...
 ```
 
@@ -391,9 +397,9 @@ Send notifications manually
 curl -X POST "http://127.0.0.1:8000/notifications/send"
 ```
 
----
+❌ peaufiner MM en remontant
 
-## Project structure
+## Project structure <!-- markmap: fold -->
 
 ```v
 FootNotif/
@@ -432,36 +438,36 @@ FootNotif/
 └── requirements.txt
 ```
 
----
+## Contributing <!-- markmap: fold -->
 
-## Contributing
+### Contributions are welcome
 
-Contributions are welcome.
+### 1. Fork the repository
 
-1. Fork the repository
+### 2. Create a branch <!-- markmap: fold -->
 
-2. Create a branch
+```bash
+git checkout -b feat/my-feature
+```
 
-    ```bash
-    git checkout -b feat/my-feature
-    ```
-
-3. Commit your changes
+### 3. Commit your changes <!-- markmap: fold -->
 
 ```bash
 git commit -m "feat: add feature"
 ```
 
-4. Push your branch
-
+### 4. Push your branch <!-- markmap: fold -->
+    
 ```bash
 git push origin feat/my-feature
 ```
-
-5. Open a Pull Request
+  
+  ### 5. Open a Pull Request
 
 ---
 
-## License
+## License <!-- markmap: fold -->
 
-License file isn't included yet.
+- License file isn't included yet.
+
+❌ Faire lien Doc → page HTML de la MM
