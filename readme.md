@@ -1,3 +1,9 @@
+---
+markmap:
+  duration: 2100
+  initialExpandLevel: -1
+---
+
 # FootNotif ⚽📩
 
 FootNotif is a small **FastAPI** project that lets people **subscribe to football teams** and receive **email notifications** about upcoming matches (daily or weekly).
@@ -8,7 +14,7 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 
 ---
 
-## Features
+## Features <!-- markmap: fold -->
 
 - ✅ Create subscribers (email + notification frequency)
 - ✅ Subscribe an email to multiple teams
@@ -23,9 +29,7 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 - ✅ Local persistence with SQLite
 - ✅ Logging for scheduled job runs
 
----
-
-## Tech stack
+## Tech stack <!-- markmap: fold -->
 
 ### Backend
 
@@ -44,22 +48,18 @@ The project also includes a **React + Vite + TypeScript admin interface** to man
 - **TypeScript**
 - **Axios**
 
----
+## Installation <!-- markmap: fold -->
 
-## Installation
-
-### 1. Clone the repository
+### 1. Clone the repository <!-- markmap: fold -->
 
 ```bash
 git clone https://github.com/EthanCoutard/FootNotif.git
 cd FootNotif
 ```
 
----
+### 2. Run the install script <!-- markmap: fold -->
 
-### 2. Run the install script
-
-**Prerequisites:** Python & Node.js installed
+#### Prerequisites: Python & Node.js installed <!-- markmap: fold -->
 
 The project includes installation scripts that automatically:
 
@@ -68,7 +68,7 @@ The project includes installation scripts that automatically:
 - install **Node dependencies**
 - configure the **scheduled notification job**
 
-#### Windows
+#### Windows <!-- markmap: fold -->
 
 | Command                         | Effect                                 |
 |---------------------------------|----------------------------------------|
@@ -79,29 +79,28 @@ The project includes installation scripts that automatically:
 | `start.ps1`                     | starts API + starts Front              |
 | `start.ps1 -NoFront`            | starts API only                        |
 
-#### Linux
+#### Linux <!-- markmap: fold -->
 
 ```bash
 bash install.sh
 ```
 
-⚠️ After installation you **must configure the `.env` files** before running the project.
+    ⚠️ After installation you must configure the `.env` files
+        before running the project.
 
----
+### 3. Environment variables (.env) <!-- markmap: fold -->
 
-### 3. Environment variables (.env)
+#### Two `.env` files are required
 
-Two `.env` files are required.
+##### Root `.env` (API configuration) <!-- markmap: fold -->
 
-##### Root `.env` (API configuration)
-
-Copy the example file:
+    Copy the example file:
 
 ```bash
 cp .env.example .env
 ```
 
-Example configuration:
+    Example configuration:
 
 ```env
 SENDER_EMAIL=your_email@gmail.com
@@ -112,248 +111,241 @@ SMTP_PORT=587
 API_PORT=8000
 ```
 
-##### Frontend `.env` (Admin interface configuration)
+##### Frontend `.env` (Admin interface configuration) <!-- markmap: fold -->
 
-Copy the example file:
+    Copy the example file:
 
 ```bash
 cp football-admin/.env.example football-admin/.env
 ```
 
-Example configuration:
+    Example configuration:
 
 ```env
 VITE_API_URL=http://127.0.0.1:8000
 ```
 ---
 
-### Gmail configuration (App Password)
+### Gmail configuration (App Password) <!-- markmap: fold -->
 
-If you use Gmail, you **cannot use your normal password**.  
-You must create an **App Password**.
+    If you use Gmail, you can't use your normal password.  
+    You must create an App Password.
 
-Steps:
+    Steps:
 
-1. Go to  
-   https://myaccount.google.com/security
+    1. Go to  
+       https://myaccount.google.com/security
 
-2. Enable **2-Step Verification** if it is not already enabled.
+    2. Enable "2-Step Verification" if it is not already enabled.
 
-3. Go to **App passwords**
+    3. Go to "App passwords"
 
-4. Create a new app password:
-   - App: **Mail**
-   - Device: **Other**
+    4. Create a new app password:
+       - App: "Mail"
+       - Device: "Other"
 
-5. Google will generate a **16-character password**.
+    5. Google will generate a 16-character passwor*.
 
-Example:
+    Example:
 
 ```
 abcd efgh ijkl mnop
 ```
 
-Use this value for:
+    Use this value for:
 
 ```
 APP_PASSWORD
 ```
 
-in your `.env`.
+    in your `.env`.
 
 ---
 
-### football-data API token
+### football-data API token <!-- markmap: fold -->
 
-You also need an API token from:
+    You also need an API token from:
 
 ```
 https://football-data.org
 ```
 
-Steps:
+    Steps:
 
-1. Create a free account
-2. Go to your dashboard
-3. Copy your API key
-4. Paste it into your root `.env`
+      1. Create a free account
+      2. Go to your dashboard
+      3. Copy your API key
+      4. Paste it into your root `.env`
 
 ```
 API_TOKEN=your_token_here
 ```
 
----
+## Running the API <!-- markmap: fold -->
 
-## Running the API
+### Start the backend API server <!-- markmap: fold -->
 
-### Start the backend API server
+#### Env + API + API doc <!-- markmap: fold -->
 
 ```bash
 .venv/bin/python3 app.py
 ```
 
-The API will start on:
+    The API will start on:
 
 ```bash
 http://127.0.0.1:YOUR_PORT
 ```
 
-*By default: YOUR_PORT = 8000*
+    Note: By default, YOUR_PORT = 8000
 
-Health endpoint:
+    Health endpoint:
 
 ```php
 http://127.0.0.1:YOUR_PORT/health
 ```
 
-Doc API endpoint:
+    Doc API endpoint:
 
 ```php
 http://127.0.0.1:YOUR_PORT/docs
 ```
 
----
+### Admin Interface <!-- markmap: fold -->
 
-#### Admin Interface
+    FootNotif includes a React + Vite + TypeScript admin interface.
 
-FootNotif includes a **React + Vite + TypeScript admin interface**.
+    It allows you to:
 
-It allows you to:
+      ✅ view subscribers
+      ✅ manage subscriptions
+      ✅ search teams
+      ✅ trigger notifications manually
 
-- view subscribers
-- manage subscriptions
-- search teams
-- trigger notifications manually
-
-## Run the front admin interface
+## Run the front admin interface <!-- markmap: fold -->
 
 ```bash
 cd football-admin
 npm run dev
 ```
 
-The admin interface runs on:
+    The admin interface runs on:
 
 ```php
 http://localhost:5173
 ```
 
----
+## Details <!-- markmap: fold -->
 
-## Details
+### Scheduled notifications <!-- markmap: fold -->
 
-### Scheduled notifications
+    FootNotif includes scripts that automatically
+    run a job responsible for sending notifications.
+    
+    The job performs the following actions:
+    
+    1. Creates the `logs/` directory if needed  
+    2. Checks if the API is running (`GET /health`)  
+    3. Starts the API server if necessary  
+    4. Triggers the notification endpoint  
+    5. Writes logs to `logs/job.log`
+    
+### Scheduled tasks <!-- markmap: fold -->
 
-FootNotif includes scripts that automatically run a job responsible for sending notifications.
+    The scheduled notification job directory is automatically installed by the install script.
 
-The job performs the following actions:
-
-1. Creates the `logs/` directory if needed  
-2. Checks if the API is running (`GET /health`)  
-3. Starts the API server if necessary  
-4. Triggers the notification endpoint  
-5. Writes logs to `logs/job.log`
-
----
-
-### Scheduled tasks
-
-The scheduled notification job directory is **automatically installed by the install script**.
-
-The cron job runs daily at **00:00** and executes:
+    The cron job runs daily at 00:00 and executes:
 
 ```bash
 runJob.sh
 ```
 
----
+### Notification logic <!-- markmap: fold -->
 
-### Notification logic
-
-Implemented in:
+    Implemented in:
 
 ```bash
 core/service.py
 ```
 
-Rules:
+    Rules:
 
-- **DAILY subscribers** receive matches for the next **1 day**
-- **WEEKLY subscribers** are processed on **Sunday**
-- Weekly subscribers receive matches for the next **7 days**
+      - **DAILY subscribers** receive matches for the next **1 day**
+      - **WEEKLY subscribers** are processed on **Sunday**
+      - Weekly subscribers receive matches for the next **7 days**
 
-The endpoint returns:
+    The endpoint returns:
 
-- list of notified emails
-- number of notifications sent
+      - list of notified emails
+      - number of notifications sent
 
----
+### API endpoints overview <!-- markmap: fold -->
 
-### API endpoints overview
-
-Base URL:
+#### Base URL <!-- markmap: fold -->
 
 ```php
 http://127.0.0.1:8000
 ```
 
-#### Subscribers
+#### Subscribers <!-- markmap: fold -->
 
-List subscribers
+    List subscribers:
 
 ```bash
 GET /subscribers
 ```
 
-Create subscriber
+    Create subscriber:
 
 ```bash
 POST /subscribers
 ```
 
-Delete subscriber
+    Delete subscriber:
 
 ```bash
 DELETE /subscribers/{email}
 ```
 
-List subscriber teams
+    List subscriber teams:
 
 ```bash
 GET /subscribers/{email}/teams
 ```
 
----
+#### Subscriptions <!-- markmap: fold -->
 
-#### Subscriptions
-
-Create subscription
+    Create subscription:
 
 ```bash
 POST /subscriptions
 ```
 
-Remove subscription
+    Remove subscription:
 
 ```bash
 DELETE /subscriptions/{email}/{teamName}
 ```
 
----
+#### Teams <!-- markmap: fold -->
 
-#### Teams
+    Trigger notifications manually:
 
-Search teams
-
+```bash
+POST /notifications/send
 ```
+
+    Search teams:
+
+```bash
 GET /teams/search?q=...
 ```
 
 ---
 
-#### Notifications
+#### Notifications <!-- markmap: fold -->
 
-Trigger notifications manually
+    Trigger notifications manually:
 
 ```bash
 POST /notifications/send
@@ -361,9 +353,9 @@ POST /notifications/send
 
 ---
 
-#### API requests examples
+#### API requests examples <!-- markmap: fold -->
 
-Create subscriber
+    Create subscriber:
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/subscribers" \
@@ -371,7 +363,7 @@ curl -X POST "http://127.0.0.1:8000/subscribers" \
 -d '{"email":"user@example.com","frequency":"DAILY"}'
 ```
 
-Subscribe to teams
+    Subscribe to teams:
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/subscriptions" \
@@ -379,21 +371,21 @@ curl -X POST "http://127.0.0.1:8000/subscriptions" \
 -d '{"email":"user@example.com","teams":["Paris Saint-Germain FC","FC Barcelona"]}'
 ```
 
-Search teams
+    Search teams:
 
 ```bash
 curl "http://127.0.0.1:8000/teams/search?q=paris"
 ```
 
-Send notifications manually
+    Send notifications manually:
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/notifications/send"
 ```
 
----
+❌ peaufiner MM en remontant
 
-## Project structure
+## Project structure <!-- markmap: fold -->
 
 ```v
 FootNotif/
@@ -432,36 +424,37 @@ FootNotif/
 └── requirements.txt
 ```
 
----
+## Contributing <!-- markmap: fold -->
 
-## Contributing
+### Contributions are welcome
 
-Contributions are welcome.
+### 1. Fork the repository
 
-1. Fork the repository
+### 2. Create a branch <!-- markmap: fold -->
 
-2. Create a branch
+```bash
+git checkout -b feat/my-feature
+```
 
-    ```bash
-    git checkout -b feat/my-feature
-    ```
-
-3. Commit your changes
+### 3. Commit your changes <!-- markmap: fold -->
 
 ```bash
 git commit -m "feat: add feature"
 ```
 
-4. Push your branch
+### 4. Push your branch <!-- markmap: fold -->
 
 ```bash
 git push origin feat/my-feature
 ```
-
-5. Open a Pull Request
+  
+### 5. Open a Pull Request
 
 ---
 
-## License
+## License <!-- markmap: fold -->
 
-License file isn't included yet.
+- License file isn't included yet.
+- [GitHub Repository](https://github.com/EthanCoutard/FootNotif)
+
+❌ Faire lien Doc → page HTML de la MM

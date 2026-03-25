@@ -86,7 +86,7 @@ if (!(Test-Path ".venv\Scripts\Activate.ps1")) {
 # Activation du venv dans le shell parent (dot sourcing)
 . .\.venv\Scripts\Activate.ps1
 
-# 🔥 Étape demandée : mise à jour de pip //2ar
+# 🔥 Étape demandée : mise à jour de pip
 Write-Host "`nMise à jour de pip..."
 python.exe -m pip install --upgrade pip
 if ($LASTEXITCODE -ne 0) {
